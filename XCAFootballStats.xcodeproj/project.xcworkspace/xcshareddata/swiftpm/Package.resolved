@@ -10,12 +10,21 @@
       }
     },
     {
+      "identity" : "svgimageswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alfianlosari/SVGImageSwiftUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f9db23eac190615dd3c5fb0788f440a840cd0fe5"
+      }
+    },
+    {
       "identity" : "svgkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SVGKit/SVGKit",
       "state" : {
-        "revision" : "58152b9f7c85eab239160b36ffdfd364aa43d666",
-        "version" : "3.0.0"
+        "branch" : "3.x",
+        "revision" : "9306d7c06eaa59af1fd0efe01edec45ef997025a"
       }
     },
     {

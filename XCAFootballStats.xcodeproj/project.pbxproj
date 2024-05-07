@@ -21,6 +21,7 @@
 		3E46186D2BEA367D00F0E3D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E46186C2BEA367D00F0E3D0 /* Preview Assets.xcassets */; };
 		3E71F0A22BEAD74200F4154A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E71F0A12BEAD74200F4154A /* SVGKit */; };
 		3E71F0A42BEAD74200F4154A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3E71F0A32BEAD74200F4154A /* SVGKitSwift */; };
+		3E71F0A72BEAD7E100F4154A /* SVGImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3E71F0A62BEAD7E100F4154A /* SVGImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E71F0A72BEAD7E100F4154A /* SVGImageSwiftUI in Frameworks */,
 				3E71F0A42BEAD74200F4154A /* SVGKitSwift in Frameworks */,
 				3E71F0A22BEAD74200F4154A /* SVGKit in Frameworks */,
 				3E4618642BEA367C00F0E3D0 /* RealityKitContent in Frameworks */,
@@ -150,6 +152,7 @@
 				3E3E501A2BEA88930094A20D /* XCAFootballDataClient */,
 				3E71F0A12BEAD74200F4154A /* SVGKit */,
 				3E71F0A32BEAD74200F4154A /* SVGKitSwift */,
+				3E71F0A62BEAD7E100F4154A /* SVGImageSwiftUI */,
 			);
 			productName = XCAFootballStats;
 			productReference = 3E46185E2BEA367C00F0E3D0 /* XCAFootballStats.app */;
@@ -182,6 +185,7 @@
 			packageReferences = (
 				3E3E50192BEA88930094A20D /* XCRemoteSwiftPackageReference "XCAFootballDataClient" */,
 				3E71F0A02BEAD74200F4154A /* XCRemoteSwiftPackageReference "SVGKit" */,
+				3E71F0A52BEAD7E100F4154A /* XCRemoteSwiftPackageReference "SVGImageSwiftUI" */,
 			);
 			productRefGroup = 3E46185F2BEA367C00F0E3D0 /* Products */;
 			projectDirPath = "";
@@ -434,6 +438,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		3E71F0A52BEAD7E100F4154A /* XCRemoteSwiftPackageReference "SVGImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/SVGImageSwiftUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -455,6 +467,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3E71F0A02BEAD74200F4154A /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKitSwift;
+		};
+		3E71F0A62BEAD7E100F4154A /* SVGImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E71F0A52BEAD7E100F4154A /* XCRemoteSwiftPackageReference "SVGImageSwiftUI" */;
+			productName = SVGImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
