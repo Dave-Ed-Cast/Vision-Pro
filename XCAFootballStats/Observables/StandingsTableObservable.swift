@@ -23,7 +23,7 @@ class StandingsTableObservable {
     var standings: [TeamStandingTable]? { fetchPhase.value }
     
     //this is used for filtering from the library dipendence
-    var selectedField: FilterOption = .latest
+    var selectedFilter: FilterOption = .latest
     
     //now the logic for filtering
     var filterOptions: [FilterOption] = {
@@ -43,29 +43,29 @@ class StandingsTableObservable {
     //now we need to actually fetch data. It must be async due to api response
     func fetchStandings(competition: Competition) async {
         
-        //MARK: For now comment this to work with stubs
-//        //initialize fetching state
-//        fetchPhase = .fetching
-//        
-//        //this block is guarding the fetching result
-//        do {
-//            //async call the api regarding the competition and set success if everything ok
-//            let standings = try await client.fetchStandings(competitionId: competition.id)
-//            
-//            //howver given that we are handling the phases, we must handle concurrency aswell, therefore
-//            if Task.isCancelled { return }
-//            fetchPhase = .success(standings)
-//            
-//        } catch {
-//            
-//            //same here
-//            if Task.isCancelled { return }
-//            
-//            //else fail
-//            fetchPhase = .failure(error)
-//        }
+//        MARK: For now comment this to work with stubs
+        //initialize fetching state
+        fetchPhase = .fetching
         
-        fetchPhase = .success (TeamStandingTable.stubs)
+        //this block is guarding the fetching result
+        do {
+            //async call the api regarding the competition and set success if everything ok
+            let standings = try await client.fetchStandings(competitionId: competition.id)
+            
+            //howver given that we are handling the phases, we must handle concurrency aswell, therefore
+            if Task.isCancelled { return }
+            fetchPhase = .success(standings)
+            
+        } catch {
+            
+            //same here
+            if Task.isCancelled { return }
+            
+            //else fail
+            fetchPhase = .failure(error)
+        }
+        
+//        fetchPhase = .success (TeamStandingTable.stubs)
     }
 }
 

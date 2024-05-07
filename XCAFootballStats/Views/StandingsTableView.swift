@@ -11,7 +11,7 @@ import XCAFootballDataClient
 struct StandingsTableView: View {
     
     let competition: Competition
-    let vm = StandingsTableObservable()
+    @Bindable var vm = StandingsTableObservable()
     var body: some View {
         //teamStandingtable already conforms to Identifiable
         Table(of: TeamStandingTable.self) {
@@ -122,7 +122,7 @@ struct StandingsTableView: View {
         }
         .overlay {
             switch vm.fetchPhase {
-            
+                
             case .fetching: ProgressView()
             case .failure(let error):
                 Text(error.localizedDescription)
@@ -132,12 +132,20 @@ struct StandingsTableView: View {
         }
         .foregroundStyle(.primary)
         .navigationTitle(competition.name)
-        .task {
+        .task(id: $vm.selectedFilter.id) {
             await vm.fetchStandings(competition: competition)
+        }
+        .toolbar {
+            ToolbarItem(placement: .bottomOrnament) {
+                Picker("Filter Options", selection: $vm.selectedFilter) {
+                    ForEach(vm.filterOptions, id: \.self) { season in
+                        Text(" \(season.text) ")
+                    }
+                }.pickerStyle(.segmented)
+            }
         }
     }
 }
-
 #Preview {
     NavigationStack {
         StandingsTableView(competition: .defaultCompetitions[1])
