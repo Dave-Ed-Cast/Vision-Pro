@@ -19,6 +19,8 @@
 		3E4618682BEA367C00F0E3D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4618672BEA367C00F0E3D0 /* ContentView.swift */; };
 		3E46186A2BEA367D00F0E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E4618692BEA367D00F0E3D0 /* Assets.xcassets */; };
 		3E46186D2BEA367D00F0E3D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E46186C2BEA367D00F0E3D0 /* Preview Assets.xcassets */; };
+		3E71F0A22BEAD74200F4154A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E71F0A12BEAD74200F4154A /* SVGKit */; };
+		3E71F0A42BEAD74200F4154A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3E71F0A32BEAD74200F4154A /* SVGKitSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E71F0A42BEAD74200F4154A /* SVGKitSwift in Frameworks */,
+				3E71F0A22BEAD74200F4154A /* SVGKit in Frameworks */,
 				3E4618642BEA367C00F0E3D0 /* RealityKitContent in Frameworks */,
 				3E3E501B2BEA88930094A20D /* XCAFootballDataClient in Frameworks */,
 			);
@@ -144,6 +148,8 @@
 			packageProductDependencies = (
 				3E4618632BEA367C00F0E3D0 /* RealityKitContent */,
 				3E3E501A2BEA88930094A20D /* XCAFootballDataClient */,
+				3E71F0A12BEAD74200F4154A /* SVGKit */,
+				3E71F0A32BEAD74200F4154A /* SVGKitSwift */,
 			);
 			productName = XCAFootballStats;
 			productReference = 3E46185E2BEA367C00F0E3D0 /* XCAFootballStats.app */;
@@ -175,6 +181,7 @@
 			mainGroup = 3E4618552BEA367C00F0E3D0;
 			packageReferences = (
 				3E3E50192BEA88930094A20D /* XCRemoteSwiftPackageReference "XCAFootballDataClient" */,
+				3E71F0A02BEAD74200F4154A /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 3E46185F2BEA367C00F0E3D0 /* Products */;
 			projectDirPath = "";
@@ -419,6 +426,14 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		3E71F0A02BEAD74200F4154A /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -430,6 +445,16 @@
 		3E4618632BEA367C00F0E3D0 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		3E71F0A12BEAD74200F4154A /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E71F0A02BEAD74200F4154A /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		3E71F0A32BEAD74200F4154A /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E71F0A02BEAD74200F4154A /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
