@@ -22,6 +22,24 @@ class StandingsTableObservable {
     //this is the fetchPhase we declared
     var standings: [TeamStandingTable]? { fetchPhase.value }
     
+    //this is used for filtering from the library dipendence
+    var selectedField: FilterOption = .latest
+    
+    //now the logic for filtering
+    var filterOptions: [FilterOption] = {
+        var date = Calendar.current.date(byAdding: .year, value: -4, to: Date())!
+        var options = [FilterOption]()
+        
+        for i in 0..<3 {
+            if let nextYear = Calendar.current.date(byAdding: .year, value: 1, to: date) {
+                options.append(.year(Calendar.current.component(.year, from: nextYear)))
+                date = nextYear
+            }
+        }
+        options.append(.latest)
+        return options
+    }()
+    
     //now we need to actually fetch data. It must be async due to api response
     func fetchStandings(competition: Competition) async {
         

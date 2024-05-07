@@ -18,12 +18,13 @@ struct StandingsTableView: View {
             
             //TODO: Optimize this ugly code
             
-            TableColumn ("Club") { team in
+            TableColumn ("Club") { club in
                 HStack {
-                    Text (team.positionText).fontWeight(.bold)
+                    Text (club.positionText).fontWeight(.bold)
                         .frame (minWidth: 20)
                     
-                    AsyncImage(url: URL(string: team.team.crest ?? "")) { phase in
+                    //some images won't load because of the rendering. I tried to use SVGKit but it's kind of buggy for vision due to the fact that it uses NSColor which is only available for macOS
+                    AsyncImage(url: URL(string: club.team.crest ?? "")) { phase in
                         switch phase {
                         case .success(let image):
                             image.resizable()
@@ -33,6 +34,8 @@ struct StandingsTableView: View {
                         }
                     }
                     .frame(width: 40, height: 40)
+                    
+                    Text(club.team.name)
                 }
             }
             .width(min: 264)
@@ -79,16 +82,59 @@ struct StandingsTableView: View {
             }
             .width(40)
             
+            TableColumn("Last 5") { club in
+                HStack(alignment: .center, spacing: 4) {
+                    if let formArray = club.formArray, !formArray.isEmpty {
+                        ForEach(formArray, id: \.self) { form in
+                            switch form {
+                            case "W":
+                                Image(systemName: "checkmark.circle.fill")
+                                    .symbolRenderingMode(
+                                        .palette)
+                                    .foregroundStyle(.white, .green)
+                                
+                            case "L":
+                                Image(systemName: "xmark.circle.fill")
+                                    .symbolRenderingMode(
+                                        .palette)
+                                    .foregroundStyle(.white, .red)
+                                
+                            default:
+                                Image(systemName: "minus.circle.fill")
+                                    .symbolRenderingMode(
+                                        .palette)
+                                    .foregroundStyle(.white, .white.opacity(0.5))
+                            }
+                        }
+                    } else {
+                        Text("-")
+                            .frame(width: 120)
+                        
+                    }
+                }
+            }
+            .width(120)
+            
         } rows: {
             ForEach(vm.standings ?? []) {
                 TableRow($0)
             }
         }
-        .foregroundStyle(.primary)
-            .navigationTitle(competition.name)
-            .task {
-                await vm.fetchStandings(competition: competition)
+        .overlay {
+            switch vm.fetchPhase {
+            
+            case .fetching: ProgressView()
+            case .failure(let error):
+                Text(error.localizedDescription)
+                    .font(.headline)
+            default: EmptyView()
             }
+        }
+        .foregroundStyle(.primary)
+        .navigationTitle(competition.name)
+        .task {
+            await vm.fetchStandings(competition: competition)
+        }
     }
 }
 
