@@ -14,7 +14,7 @@ struct TopScorersTableView: View {
     @Bindable var vm = TopScorersTableObservable()
     var body: some View {
         Table(of: Scorer.self) {
-            TableColumn("Pos") { scorer in
+            TableColumn("Scorer") { scorer in
                 HStack {
                     Text(scorer.posText)
                         .fontWeight(.bold)
@@ -38,33 +38,33 @@ struct TopScorersTableView: View {
             
             TableColumn("Matches") {
                 Text($0.playedMatchesText)
-                    .frame(minWidth: 64)
+                    .frame(minWidth: 60)
             }
-            .width(64)
+            .width(90)
             
             TableColumn("Goals") {
                 Text($0.goalsText)
-                    .frame(minWidth: 64)
+                    .frame(minWidth: 60)
             }
-            .width(64)
+            .width(90)
             
-            TableColumn("⌀ Goals") {
+            TableColumn("% Goals") {
                 Text($0.goalsPerMatchRatioText)
-                    .frame(minWidth: 64)
+                    .frame(minWidth: 60)
             }
-            .width(64)
+            .width(90)
             
             TableColumn("Assists") {
                 Text($0.assistsText)
-                    .frame(minWidth: 64)
+                    .frame(minWidth: 60)
             }
-            .width(64)
+            .width(90)
             
             TableColumn("Penalties") {
                 Text($0.penaltiesText)
-                    .frame(minWidth: 64)
+                    .frame(minWidth: 60)
             }
-            .width(64)
+            .width(90)
             
         } rows: {
             ForEach(vm.scorers ?? []) {

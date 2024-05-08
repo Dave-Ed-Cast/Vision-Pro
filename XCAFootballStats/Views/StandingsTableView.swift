@@ -42,45 +42,45 @@ struct StandingsTableView: View {
             
             TableColumn("W") {
                 Text($0.wonText)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 30)
             }
-            .width(50)
+            .width(60)
             
             TableColumn("D") {
                 Text($0.drawText)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 30)
             }
-            .width(50)
+            .width(60)
             
             TableColumn("L") {
                 Text($0.lostText)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 30)
             }
-            .width(50)
+            .width(60)
             
             TableColumn("GF") {
                 Text($0.goalsForText)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 30)
             }
-            .width(50)
+            .width(60)
             
             TableColumn("GA") {
                 Text($0.goalsAgainstText)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 30)
             }
-            .width(50)
+            .width(60)
             
             TableColumn("GD") {
                 Text($0.goalDifferenceText)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 30)
             }
-            .width(50)
+            .width(60)
             
             TableColumn("Pts") {
                 Text($0.pointsText)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 30)
             }
-            .width(50)
+            .width(60)
             
             TableColumn("Last 5") { club in
                 HStack(alignment: .center, spacing: 4) {
@@ -89,20 +89,17 @@ struct StandingsTableView: View {
                             switch form {
                             case "W":
                                 Image(systemName: "checkmark.circle.fill")
-                                    .symbolRenderingMode(
-                                        .palette)
+                                    .symbolRenderingMode(.palette)
                                     .foregroundStyle(.white, .green)
                                 
                             case "L":
                                 Image(systemName: "xmark.circle.fill")
-                                    .symbolRenderingMode(
-                                        .palette)
+                                    .symbolRenderingMode(.palette)
                                     .foregroundStyle(.white, .red)
                                 
                             default:
                                 Image(systemName: "minus.circle.fill")
-                                    .symbolRenderingMode(
-                                        .palette)
+                                    .symbolRenderingMode(.palette)
                                     .foregroundStyle(.white, .white.opacity(0.5))
                             }
                         }

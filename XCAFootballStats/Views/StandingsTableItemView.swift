@@ -10,17 +10,17 @@ import XCAFootballDataClient
 
 struct StandingsTableItemView: View {
     
-    @State var selectedCompletition: Competition?
+    @State var selectedCompetition: Competition?
     var body: some View {
         NavigationSplitView {
-            List(Competition.defaultCompetitions, id: \.self, selection: $selectedCompletition) {
+            List(Competition.defaultCompetitions, id: \.self, selection: $selectedCompetition) {
                 Text($0.name)
             }
             .navigationTitle("XCA ⚽️ standings")
         } detail: {
-            if let selectedCompletition {
-                StandingsTableView(competition: selectedCompletition)
-                    .id(selectedCompletition)
+            if let selectedCompetition {
+                StandingsTableView(competition: selectedCompetition)
+                    .id(selectedCompetition)
             } else {
                 Text("Select a competition!")
             }
