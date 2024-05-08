@@ -12,13 +12,19 @@ import XCAFootballDataClient
 @Observable
 class TopScorersTableObservable {
     
+    //api key
     let client = FootballDataClient(apiKey: footballApiKey)
-    var fetchPhase = FetchPhase<[Scorer]>.initial
     
+    //this is a structure filled with every data regarding the team score
+    var fetchPhase: FetchPhase = FetchPhase<[Scorer]>.initial
+    
+    //this is the fetchPhase we declared
     var scorers: [Scorer]? { fetchPhase.value }
     
+    //this is used for filtering from the library dipendence
     var selectedFilter: FilterOption = .latest
     
+    //now the logic for filtering
     var filterOptions: [FilterOption] = {
         var date = Calendar.current.date(byAdding: .year, value: -4, to: Date())!
         var options = [FilterOption]()

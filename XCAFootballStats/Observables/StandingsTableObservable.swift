@@ -43,14 +43,14 @@ class StandingsTableObservable {
     //now we need to actually fetch data. It must be async due to api response
     func fetchStandings(competition: Competition) async {
         
-//        MARK: For now comment this to work with stubs
+        //MARK: For now let's use stubs
         //initialize fetching state
         fetchPhase = .fetching
         
         //this block is guarding the fetching result
         do {
             //async call the api regarding the competition and set success if everything ok
-            let standings = try await client.fetchStandings(competitionId: competition.id)
+            let standings = try await client.fetchStandings(competitionId: competition.id, filterOption: selectedFilter)
             
             //howver given that we are handling the phases, we must handle concurrency aswell, therefore
             if Task.isCancelled { return }
@@ -69,9 +69,10 @@ class StandingsTableObservable {
     }
 }
 
-
+//this extends the view
 extension TeamStandingTable {
     
+    //this is for stubs if we need them
     static var stubs: [TeamStandingTable] {
         
         //get the file from its folder location
