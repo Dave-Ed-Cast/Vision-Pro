@@ -13,7 +13,7 @@ let footballApiKey = "134ddec149b34b599513b78db2490625"
 struct XCAFootballStatsApp: App {
     var body: some Scene {
         WindowGroup {
-            StandingsTableView(competition: .defaultCompetitions[1])
+            StandingsTableItemView()
         }
     }
 }
