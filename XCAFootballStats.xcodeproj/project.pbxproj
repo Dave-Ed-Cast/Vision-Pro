@@ -10,6 +10,7 @@
 		3E31781E2BEB613900DA0BBC /* StandingsTableItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E31781D2BEB613900DA0BBC /* StandingsTableItemView.swift */; };
 		3E3178202BEB651200DA0BBC /* TopScorersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E31781F2BEB651200DA0BBC /* TopScorersTableView.swift */; };
 		3E3178222BEB65F900DA0BBC /* TopScorersTableObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3178212BEB65F900DA0BBC /* TopScorersTableObservable.swift */; };
+		3E3178242BEBC42B00DA0BBC /* TopScorersTableItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3178232BEBC42B00DA0BBC /* TopScorersTableItemView.swift */; };
 		3E3E501B2BEA88930094A20D /* XCAFootballDataClient in Frameworks */ = {isa = PBXBuildFile; productRef = 3E3E501A2BEA88930094A20D /* XCAFootballDataClient */; };
 		3E3E501E2BEA89110094A20D /* StandingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E501D2BEA89110094A20D /* StandingsTableView.swift */; };
 		3E3E50212BEA8A720094A20D /* StandingsTableObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E50202BEA8A720094A20D /* StandingsTableObservable.swift */; };
@@ -28,6 +29,7 @@
 		3E31781D2BEB613900DA0BBC /* StandingsTableItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableItemView.swift; sourceTree = "<group>"; };
 		3E31781F2BEB651200DA0BBC /* TopScorersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScorersTableView.swift; sourceTree = "<group>"; };
 		3E3178212BEB65F900DA0BBC /* TopScorersTableObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScorersTableObservable.swift; sourceTree = "<group>"; };
+		3E3178232BEBC42B00DA0BBC /* TopScorersTableItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScorersTableItemView.swift; sourceTree = "<group>"; };
 		3E3E501D2BEA89110094A20D /* StandingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableView.swift; sourceTree = "<group>"; };
 		3E3E50202BEA8A720094A20D /* StandingsTableObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableObservable.swift; sourceTree = "<group>"; };
 		3E3E50222BEA8AFA0094A20D /* FetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhase.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				3E3E501D2BEA89110094A20D /* StandingsTableView.swift */,
 				3E31781D2BEB613900DA0BBC /* StandingsTableItemView.swift */,
 				3E31781F2BEB651200DA0BBC /* TopScorersTableView.swift */,
+				3E3178232BEBC42B00DA0BBC /* TopScorersTableItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3178242BEBC42B00DA0BBC /* TopScorersTableItemView.swift in Sources */,
 				3E3E50232BEA8AFA0094A20D /* FetchPhase.swift in Sources */,
 				3E3E501E2BEA89110094A20D /* StandingsTableView.swift in Sources */,
 				3E3E502A2BEA919D0094A20D /* Utility.swift in Sources */,

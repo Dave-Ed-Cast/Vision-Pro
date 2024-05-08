@@ -38,49 +38,49 @@ struct StandingsTableView: View {
                     Text(club.team.name)
                 }
             }
-            .width(min: 264)
+            .width(min: 150)
             
             TableColumn("W") {
                 Text($0.wonText)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50)
             }
-            .width(40)
+            .width(50)
             
             TableColumn("D") {
                 Text($0.drawText)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50)
             }
-            .width(40)
+            .width(50)
             
             TableColumn("L") {
                 Text($0.lostText)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50)
             }
-            .width(40)
+            .width(50)
             
             TableColumn("GF") {
                 Text($0.goalsForText)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50)
             }
-            .width(40)
+            .width(50)
             
             TableColumn("GA") {
                 Text($0.goalsAgainstText)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50)
             }
-            .width(40)
+            .width(50)
             
             TableColumn("GD") {
                 Text($0.goalDifferenceText)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50)
             }
-            .width(40)
+            .width(50)
             
             TableColumn("Pts") {
                 Text($0.pointsText)
-                    .frame(minWidth: 40)
+                    .frame(minWidth: 50)
             }
-            .width(40)
+            .width(50)
             
             TableColumn("Last 5") { club in
                 HStack(alignment: .center, spacing: 4) {
@@ -131,7 +131,7 @@ struct StandingsTableView: View {
             }
         }
         .foregroundStyle(.primary)
-        .navigationTitle(competition.name)
+        .navigationTitle(competition.name + " standings")
         .task(id: $vm.selectedFilter.id) {
             await vm.fetchStandings(competition: competition)
         }
@@ -141,7 +141,8 @@ struct StandingsTableView: View {
                     ForEach(vm.filterOptions, id: \.self) { season in
                         Text(" \(season.text) ")
                     }
-                }.pickerStyle(.segmented)
+                }
+                .pickerStyle(.segmented)
             }
         }
     }

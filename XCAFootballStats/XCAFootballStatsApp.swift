@@ -17,7 +17,7 @@ struct XCAFootballStatsApp: App {
                 StandingsTableItemView()
                     .tabItem { Label("Standings", systemImage: "table.fill") }
                 
-                Text("Top scorers")
+                TopScorersTableItemView()
                     .tabItem { Label("Top Scorers", systemImage: "soccerball.inverse") }
             }
         }

@@ -38,8 +38,8 @@ class TopScorersTableObservable {
         fetchPhase = .fetching
         do {
             //MARK: For now let's use stubs
-            var scorers = Scorer.stubs
-//            var scorers = try await client.fetchTopScorers(competitionId: competition.id, filterOption: selectedFilter)
+//            var scorers = Scorer.stubs
+            var scorers = try await client.fetchTopScorers(competitionId: competition.id, filterOption: selectedFilter)
             
             if Task.isCancelled { return }
             
