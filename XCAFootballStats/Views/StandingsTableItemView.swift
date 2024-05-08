@@ -22,7 +22,7 @@ struct StandingsTableItemView: View {
                 StandingsTableView(competition: selectedCompletition)
                     .id(selectedCompletition)
             } else {
-                Text("select a competition")
+                Text("Select a competition!")
             }
         }
     }

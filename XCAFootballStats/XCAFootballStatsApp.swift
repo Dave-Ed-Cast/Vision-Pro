@@ -13,7 +13,13 @@ let footballApiKey = "134ddec149b34b599513b78db2490625"
 struct XCAFootballStatsApp: App {
     var body: some Scene {
         WindowGroup {
-            StandingsTableItemView()
+            TabView{
+                StandingsTableItemView()
+                    .tabItem { Label("Standings", systemImage: "table.fill") }
+                
+                Text("Top scorers")
+                    .tabItem { Label("Top Scorers", systemImage: "soccerball.inverse") }
+            }
         }
     }
 }
