@@ -85,7 +85,7 @@ struct TopScorersTableView: View {
             }
         }
         .foregroundStyle(.primary)
-        .navigationTitle(competition.name + "Top Scorers")
+        .navigationTitle(competition.name + " Top Scorers")
         .task(id: vm.selectedFilter.id) {
             await vm.fetchTopScorers(competition: competition)
         }
